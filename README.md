@@ -2,12 +2,13 @@
 These problems are some of the more fun parts of the holiday season to me. They're whimsical, but they help keep one's coding chops up.
 
 To run:
+### C#
 ```
-//C#
 cd dotnet
 dotnet run
-
-//JavaScript (forthcoming)
+```
+### JavaScript (forthcoming)
+```
 cd js
 node main.js
 ```
