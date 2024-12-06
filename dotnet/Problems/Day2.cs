@@ -14,7 +14,7 @@ namespace AdventOfCode2024.Problems
             {
                 return nums[0] == nums[1] ? false : true;
             }
-            bool ascending = nums[1] < nums[2] ? true : false;
+            bool ascending = nums[0] < nums[1] ? true : false;
             for (int i = 0; i < nums.Count - 1; i++)
             {
                 if (nums[i] == nums[i + 1])
