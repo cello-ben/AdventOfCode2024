@@ -3,6 +3,7 @@ namespace AdventOfCode2024.Problems
     public class Day4
     {
         private static int XmasOccurrencesHelper(List<List<char>> matrix, int i, int j, int pointer) //WIP - Must implement memoization to avoid stack overflow.
+        //Tested it with tiny matrix in Python, still overflows stack. We must be missing at least one base case.
         {
             char[] word = {'X', 'M', 'A', 'S'};
             //We can do multiple recursive calls since we're OK with overlapping occurrences.
