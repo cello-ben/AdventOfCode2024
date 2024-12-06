@@ -2,7 +2,7 @@ namespace AdventOfCode2024.Problems
 {
     public class Day4
     {
-        private static int XmasOccurrencesHelper(List<List<char>> matrix, int i, int j, int pointer)
+        private static int XmasOccurrencesHelper(List<List<char>> matrix, int i, int j, int pointer) //WIP - Must implement memoization to avoid stack overflow.
         {
             char[] word = {'X', 'M', 'A', 'S'};
             //We can do multiple recursive calls since we're OK with overlapping occurrences.
