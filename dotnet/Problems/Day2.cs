@@ -4,39 +4,58 @@ namespace AdventOfCode2024.Problems
 {
     public class Day2
     {
-        public static int GetListOverlap(string raw)
+        private static bool IsSafe(List<int> nums)
         {
-            HashSet<int> column1 = new();
-            Dictionary<int, int> column2 = new(); //HashSet is not sufficient for the second column, since we can have multiple occurrences.
-
+            if (nums.Count <= 1)
+            {
+                return true;
+            }
+            else if (nums.Count == 2)
+            {
+                return nums[0] == nums[1] ? false : true;
+            }
+            bool ascending = nums[1] < nums[2] ? true : false;
+            for (int i = 0; i < nums.Count - 1; i++)
+            {
+                if (nums[i] == nums[i + 1])
+                {
+                    return false;
+                }
+                else if (nums[i] < nums[i + 1])
+                {
+                    if (!ascending)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (ascending)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public static int GetSafeReports(string raw)
+        {
+            int safe = 0;
             foreach (string line in raw.Split("\n"))
             {
-                string[] pair = System.Text.RegularExpressions.Regex.Split(line, @"\s\s{2,}");
-                bool canParse1 = int.TryParse(pair[0], out int n1);
-                bool canParse2 = int.TryParse(pair[1], out int n2);
-                if (!canParse1 || !canParse2)
+                string[] strNums = line.Split(" ");
+                List<int> nums = new();
+                foreach (string num in strNums)
                 {
-                    return -1; //ERROR
+                    bool canParse = int.TryParse(num, out int n);
+                    if (canParse)
+                    {
+                        nums.Add(n);
+                    }
                 }
-                if (!column2.ContainsKey(n2))
-                {
-                    column2[n2] = 0;
-                }
-                column1.Add(n1);
-                column2[n2]++;
+                safe += IsSafe(nums) ? 1 : 0;
             }
-
-            int diff = 0;
-            
-            foreach (int elem in column1)
-            {
-                if (column2.ContainsKey(elem))
-                {
-                    diff += elem * column2[elem];
-                }
-            }
-
-            return diff;
+            return safe;
         }
     }
 }
