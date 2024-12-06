@@ -12,7 +12,8 @@ namespace AdventOfCode2024
             string day2Input = File.ReadAllText("../inputs/Day2.txt");
             Console.WriteLine($"Day 2 Part 1 answer: {Day2.GetSafeReports(day2Input)}");
             string day3Input = File.ReadAllText("../inputs/Day3.txt");
-            Console.WriteLine($"Day 3 answer: {Day3.DecodeCorruptedMemory(day3Input)}");
+            Console.WriteLine($"Day 2 Part 2 Answer: {Day2.GetSafeReportsWithRemoval(day2Input)}");
+            Console.WriteLine($"Day 3 Part 1 answer: {Day3.DecodeCorruptedMemory(day3Input)}");
         }
     }
 }
