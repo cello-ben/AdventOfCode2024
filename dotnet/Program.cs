@@ -15,6 +15,8 @@ namespace AdventOfCode2024
             string day3Input = File.ReadAllText("../inputs/Day3.txt");
             Console.WriteLine($"Day 3 Part 1 answer: {Day3.DecodeCorruptedMemory(day3Input)}");
             Console.WriteLine($"Day 3 Part 2 answer; {Day3.DecodeCorruptedMemoryWithDoDont(day3Input)}");
+            string day4Input = File.ReadAllText("../inputs/Day4.txt");
+            Console.WriteLine($"Day 4 Part 1 answer: {Day4.GetNumXmasOccurrences(day4Input)}");
         }
     }
 }

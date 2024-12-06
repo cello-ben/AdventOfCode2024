@@ -49,7 +49,7 @@ namespace AdventOfCode2024.Problems
             int safe = 0;
             foreach (string line in raw.Split("\n"))
             {
-                Console.WriteLine(line);
+                // Console.WriteLine(line);
                 string[] strNums = line.Split(" ");
                 List<int> nums = new();
                 foreach (string num in strNums)

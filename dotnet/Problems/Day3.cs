@@ -11,7 +11,6 @@ namespace AdventOfCode2024.Problems
             Regex matchRegex = new(@"(mul\([0-9]+,[0-9]+\))|do\(\)|don't\(\)");
             foreach (Match match in matchRegex.Matches(memory))
             {
-                Console.WriteLine(match);
                 switch (match.Value.ToString())
                 {
                     case "do()":
