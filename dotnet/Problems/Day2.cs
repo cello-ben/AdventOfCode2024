@@ -9,7 +9,7 @@ namespace AdventOfCode2024.Problems
             //Cleanest way to do this is sort the list, check if unsorted == sorted,
             //and if a hash set of the ints is the same length (i.e. all distinct).
             //However, that brings us to O(n log n) territory, while the more
-            //verbose version gives us O.
+            //verbose version gives us O(n).
             if (nums.Count <= 1)
             {
                 return true;
